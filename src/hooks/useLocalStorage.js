@@ -5,6 +5,7 @@ export const useLocalStorage = (key, initialValue) => {
     if (localStorage.getItem(key)) {
       return JSON.parse(localStorage.getItem(key));
     }
+    localStorage.setItem(key, JSON.stringify(initialValue));
     return initialValue;
   });
 
